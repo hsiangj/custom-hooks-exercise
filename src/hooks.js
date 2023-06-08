@@ -18,9 +18,11 @@ function useAxios(url) {
     console.log(res.data)
     setResponses(responses => [...responses, {...res.data, id:uuid()}]); 
   };
+
+  const cleanResponse = () => setResponses([]);
   
 
-  return [responses, addResponse]
+  return [responses, addResponse, cleanResponse]
 };
 
 
